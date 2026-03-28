@@ -42,6 +42,35 @@
             text-align: center;
             text-shadow: 1px 1px 2px black;
         }
+
+        .controls {
+            position: absolute;
+            bottom: 120px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .control-btn {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .control-btn.active {
+            background: white;
+            color: #121212;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.3);
+        }
     </style>
 </head>
 
@@ -49,7 +78,12 @@
 
     <div class="instrucoes">
         <h2>Outdoor Digital</h2>
-        <p>Clique no botão abaixo para projetar o anúncio</p>
+        <p>Escolha o tamanho e projete o anúncio</p>
+    </div>
+
+    <div class="controls">
+        <button class="control-btn active" onclick="changeScale('1 1 1', this)">Tamanho Real</button>
+        <button class="control-btn" onclick="changeScale('0.1 0.1 0.1', this)">Miniatura</button>
     </div>
 
     <model-viewer src="billboard.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls ar-placement="floor"
@@ -60,6 +94,17 @@
         </button>
 
     </model-viewer>
+
+    <script>
+        function changeScale(scale, element) {
+            const mv = document.querySelector('model-viewer');
+            mv.scale = scale;
+
+            // Update active state of buttons
+            document.querySelectorAll('.control-btn').forEach(btn => btn.classList.remove('active'));
+            element.classList.add('active');
+        }
+    </script>
 
 </body>
 

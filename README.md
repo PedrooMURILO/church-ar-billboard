@@ -5,6 +5,7 @@ Uma aplicação simples de Realidade Aumentada baseada na web (WebAR) que permit
 ## 🌟 Funcionalidades
 
 - **Visualização de Modelo 3D**: Interação com um modelo `.glb` de alta qualidade de um outdoor de igreja.
+- **Seleção de Escala**: Opção de alternar entre "Tamanho Real" (1:1) e "Miniatura" para visualização em ambientes internos.
 - **Integração WebAR**: Utiliza o componente `<model-viewer>` do Google para projetar o modelo 3D no espaço do usuário via WebXR, Scene Viewer ou Quick Look.
 - **Design Responsivo**: Funciona em navegadores de celular e desktop (AR requer dispositivos móveis compatíveis).
 
