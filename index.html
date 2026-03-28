@@ -32,7 +32,7 @@
             font-weight: bold;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
             cursor: pointer;
-            z-index: 999;
+            z-index: 1010;
         }
 
         .instrucoes {
@@ -45,7 +45,7 @@
 
         .controls {
             position: absolute;
-            bottom: 120px;
+            bottom: 140px;
             left: 50%;
             transform: translateX(-50%);
             display: flex;
@@ -83,7 +83,7 @@
 
     <div class="controls">
         <button class="control-btn active" onclick="changeScale('1 1 1', this)">Tamanho Real</button>
-        <button class="control-btn" onclick="changeScale('0.1 0.1 0.1', this)">Miniatura</button>
+        <button class="control-btn" onclick="changeScale('0.3 0.3 0.3', this)">Miniatura</button>
     </div>
 
     <model-viewer src="billboard.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls ar-placement="floor"
